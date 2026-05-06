@@ -6,6 +6,7 @@ import MasonryGrid from '../components/MasonryGrid';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import PricingCard from '../components/PricingCard';
 import AboutMe from '../components/AboutMe';
+import Contact from '../components/Contact';
 import './Home.css';
 
 export default function Home() {
@@ -161,6 +162,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ─── Contact ──────────────────────────────────────── */}
+      <Contact />
 
       {/* ─── Project Modal ────────────────────────────────── */}
       {selectedProject && (

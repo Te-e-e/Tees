@@ -27,6 +27,7 @@ export default function Navbar() {
             <>
               <button className="navbar-link" onClick={() => scrollTo('gallery')}>Gallery</button>
               <button className="navbar-link" onClick={() => scrollTo('pricing')}>Pricing</button>
+              <button className="navbar-link" onClick={() => scrollTo('contact')}>Contact</button>
             </>
           ) : (
             <>

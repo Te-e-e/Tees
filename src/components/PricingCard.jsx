@@ -31,7 +31,12 @@ export default function PricingCard({ planNum, name, subtitle, price, priceSub, 
         ))}
       </ul>
 
-      <button className="pricing-request-btn">REQUEST &gt;&gt;</button>
+      <button 
+        className="pricing-request-btn"
+        onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        REQUEST &gt;&gt;
+      </button>
     </div>
   );
 }
