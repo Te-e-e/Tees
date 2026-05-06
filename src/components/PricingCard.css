@@ -1,0 +1,248 @@
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pricing-card-atlantic {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 95, 115, 0.05); /* very faint oceanic teal */
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.pricing-card-atlantic:hover {
+  transform: translateY(-8px);
+}
+
+.pricing-popular-badge {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--seafoam-green);
+  color: var(--deep-navy);
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0 var(--radius-md) 0 var(--radius-md);
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(148, 210, 189, 0.4);
+}
+
+.pricing-plan-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.pricing-plan-num {
+  font-family: monospace;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.pricing-title-atlantic {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.pricing-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.pricing-price-container {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.pricing-amount-atlantic {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.pricing-per-asset {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.pricing-features-atlantic {
+  list-style: none;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+
+.pricing-feature-atlantic {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.pricing-feature-atlantic svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--oceanic-teal);
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.pricing-request-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+/* Card Variants for Glows */
+
+/* Left Card (Teal Light) */
+.card-teal-light {
+  border-top: 2px solid rgba(10, 147, 150, 0.3);
+}
+.card-teal-light:hover {
+  box-shadow: 0 10px 30px rgba(10, 147, 150, 0.15);
+}
+.card-teal-light .pricing-title-atlantic,
+.card-teal-light .pricing-amount-atlantic {
+  color: var(--teal-light);
+  text-shadow: 0 0 15px rgba(10, 147, 150, 0.4);
+}
+.card-teal-light .pricing-feature-atlantic svg {
+  color: var(--teal-light);
+  filter: drop-shadow(0 0 5px rgba(10, 147, 150, 0.4));
+}
+.card-teal-light .pricing-request-btn:hover {
+  background: rgba(10, 147, 150, 0.1);
+  border-color: var(--teal-light);
+  color: var(--teal-light);
+  box-shadow: 0 0 15px rgba(10, 147, 150, 0.3);
+}
+
+/* Center Card (Seafoam) */
+.card-seafoam {
+  border-top: 2px solid rgba(148, 210, 189, 0.4);
+}
+.card-seafoam:hover {
+  box-shadow: 0 10px 30px rgba(148, 210, 189, 0.15);
+}
+.card-seafoam .pricing-title-atlantic,
+.card-seafoam .pricing-amount-atlantic {
+  color: var(--seafoam-green);
+  text-shadow: 0 0 15px rgba(148, 210, 189, 0.5);
+}
+.card-seafoam .pricing-feature-atlantic svg {
+  color: var(--seafoam-green);
+  filter: drop-shadow(0 0 5px rgba(148, 210, 189, 0.5));
+}
+.card-seafoam .pricing-request-btn:hover {
+  background: rgba(148, 210, 189, 0.1);
+  border-color: var(--seafoam-green);
+  color: var(--seafoam-green);
+  box-shadow: 0 0 15px rgba(148, 210, 189, 0.3);
+}
+
+/* Right Card (Oceanic Teal) */
+.card-oceanic {
+  border-top: 2px solid rgba(0, 95, 115, 0.4);
+}
+.card-oceanic:hover {
+  box-shadow: 0 10px 30px rgba(0, 95, 115, 0.2);
+}
+.card-oceanic .pricing-title-atlantic,
+.card-oceanic .pricing-amount-atlantic {
+  color: #008ba8; /* slightly lighter for visibility */
+  text-shadow: 0 0 15px rgba(0, 139, 168, 0.4);
+}
+.card-oceanic .pricing-feature-atlantic svg {
+  color: #008ba8;
+  filter: drop-shadow(0 0 5px rgba(0, 139, 168, 0.4));
+}
+.card-oceanic .pricing-request-btn:hover {
+  background: rgba(0, 139, 168, 0.1);
+  border-color: #008ba8;
+  color: #008ba8;
+  box-shadow: 0 0 15px rgba(0, 139, 168, 0.3);
+}
+
+/* TOS Section */
+.tos-section {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(0, 18, 25, 0.4);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.tos-header {
+  font-family: monospace;
+  color: var(--seafoam-light);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+}
+
+.tos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.tos-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.tos-num {
+  font-family: monospace;
+  font-weight: 800;
+  color: var(--seafoam-green);
+  background: rgba(148, 210, 189, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.tos-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

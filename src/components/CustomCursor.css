@@ -1,0 +1,81 @@
+/* Hide default cursor globally */
+body {
+  cursor: none;
+}
+
+a, button, input, select, textarea, .gallery-card, .toggle, .ba-slider, .category-tab, .modal-close {
+  cursor: none !important;
+}
+
+body.is-touch-device {
+  cursor: auto;
+}
+
+body.is-touch-device a,
+body.is-touch-device button,
+body.is-touch-device input,
+body.is-touch-device select,
+body.is-touch-device textarea,
+body.is-touch-device .gallery-card,
+body.is-touch-device .toggle,
+body.is-touch-device .ba-slider,
+body.is-touch-device .category-tab,
+body.is-touch-device .modal-close {
+  cursor: pointer !important;
+}
+
+body.is-touch-device .custom-cursor-bubble,
+body.is-touch-device .trail-bubble {
+  display: none !important;
+}
+
+/* --- Main Bubble Cursor --- */
+.custom-cursor-bubble {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--seafoam-green);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  transition: opacity 0.2s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-cursor-bubble.hovering {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(148, 210, 189, 0.15); /* Soft seafoam tint */
+  border-color: rgba(148, 210, 189, 0.9);
+  backdrop-filter: blur(2px);
+}
+
+.custom-cursor-bubble.hidden {
+  opacity: 0;
+}
+
+/* --- Trail Bubbles --- */
+.trail-bubble {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+  animation: bubbleRise 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bubbleRise {
+  0% { 
+    opacity: 0.8; 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translate(calc(-50% + var(--driftX)), calc(-50% - 40px)) scale(0.2); 
+  }
+}

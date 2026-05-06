@@ -1,0 +1,96 @@
+.ba-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  cursor: ew-resize;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.ba-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ba-image {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  display: block;
+  pointer-events: none;
+}
+
+.ba-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: #001219; /* Deep Navy - blocks the after image from bleeding through */
+}
+
+.ba-after {
+  position: relative;
+  z-index: 1;
+  background: #001219;
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 1rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-full);
+  background: rgba(10, 10, 11, 0.7);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border: 1px solid var(--border-glass);
+}
+
+.ba-label-before {
+  left: 1rem;
+}
+
+.ba-label-after {
+  right: 1rem;
+}
+
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--seafoam-green);
+  z-index: 10;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(148, 210, 189, 0.4);
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  border: 2px solid var(--seafoam-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--seafoam-green);
+  box-shadow: 0 0 20px rgba(148, 210, 189, 0.3);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.ba-slider:active .ba-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+}

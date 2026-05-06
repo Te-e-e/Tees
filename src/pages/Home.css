@@ -1,0 +1,353 @@
+/* ─── Hero ─────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--space-3xl) 0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-gradient-1 {
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 250px;
+  height: 120%;
+  background: linear-gradient(180deg, rgba(148, 210, 189, 0.1) 0%, transparent 80%);
+  filter: blur(40px);
+  transform-origin: top center;
+  animation: swayRay1 10s ease-in-out infinite;
+}
+
+.hero-gradient-2 {
+  position: absolute;
+  top: -10%;
+  right: 25%;
+  width: 350px;
+  height: 120%;
+  background: linear-gradient(180deg, rgba(0, 95, 115, 0.15) 0%, transparent 80%);
+  filter: blur(60px);
+  transform-origin: top center;
+  animation: swayRay2 14s ease-in-out infinite;
+}
+
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 210, 189, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 210, 189, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.4), transparent 80%);
+}
+
+@keyframes swayRay1 {
+  0%, 100% { transform: rotate(12deg) translateX(0); opacity: 0.6; }
+  50% { transform: rotate(8deg) translateX(40px); opacity: 1; }
+}
+
+@keyframes swayRay2 {
+  0%, 100% { transform: rotate(-15deg) translateX(0); opacity: 0.5; }
+  50% { transform: rotate(-10deg) translateX(-50px); opacity: 0.8; }
+}
+
+.hero-mask-left {
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+  z-index: 1;
+  color: var(--seafoam-green);
+}
+
+.hero-mask-right {
+  position: absolute;
+  right: 8%;
+  top: 20%;
+  z-index: 1;
+  color: var(--seafoam-green);
+  transform: scaleX(-1);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 750px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--seafoam-green);
+  background: rgba(148, 210, 189, 0.08);
+  border: 1px solid rgba(148, 210, 189, 0.15);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
+}
+
+.hero-badge .kitsune-mask {
+  color: var(--seafoam-green);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+}
+
+.hero-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--teal-light);
+  font-style: italic;
+  margin-bottom: var(--space-md);
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 550px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scroll-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(148, 210, 189, 0.3);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scroll-wheel {
+  width: 3px;
+  height: 8px;
+  background: var(--seafoam-green);
+  border-radius: 2px;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+}
+
+/* ─── Section Headers ─────────────────────────────────── */
+.section-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--seafoam-green);
+  margin-bottom: var(--space-sm);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── Pricing Section ─────────────────────────────────── */
+.pricing-section {
+  position: relative;
+}
+
+.pricing-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--seafoam-green), transparent);
+  opacity: 0.3;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ─── Project Modal ───────────────────────────────────── */
+.project-modal {
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(148, 210, 189, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+/* Fixed 500x500 frame inside the modal */
+.project-modal-frame {
+  width: 500px;
+  height: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #001219;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(148, 210, 189, 0.1);
+}
+
+.project-modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: scale-down;
+  display: block;
+}
+
+/* Before/After slider inside modal also gets the fixed frame */
+.project-modal .ba-slider-wrap {
+  width: 500px;
+  height: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-modal .ba-image {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  display: block;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 11, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-glass);
+  border-radius: 50%;
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.modal-close:hover {
+  background: rgba(148, 210, 189, 0.15);
+  color: var(--seafoam-green);
+}
+
+.project-modal-body {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.project-modal-title {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.project-modal-desc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-top: 0.75rem;
+}
+
+/* ─── Loading State ───────────────────────────────────── */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-3xl);
+  color: var(--text-muted);
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border-subtle);
+  border-top-color: var(--seafoam-green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-mask-left,
+  .hero-mask-right {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}

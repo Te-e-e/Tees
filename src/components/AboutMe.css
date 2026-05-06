@@ -1,0 +1,195 @@
+.about-section {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.about-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--seafoam-green);
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(148, 210, 189, 0.4);
+  letter-spacing: 0.02em;
+}
+
+.title-underline {
+  width: 90px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--seafoam-green), var(--oceanic-teal));
+  margin-bottom: 4rem;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(148, 210, 189, 0.3);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Terminal / Frosted Panel ──────────────────────── */
+.about-terminal-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 18, 25, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+/* Optional soft inner glow to mimic frosted water */
+.about-terminal-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 40px rgba(148, 210, 189, 0.03);
+  pointer-events: none;
+}
+
+.terminal-header {
+  padding: 1.5rem 2rem 0;
+  font-family: monospace;
+  color: var(--seafoam-light);
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.terminal-prompt {
+  color: var(--seafoam-green);
+  margin-right: 0.5rem;
+}
+
+.terminal-body {
+  padding: 1.5rem 2rem 2.5rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.terminal-body p {
+  margin-bottom: 0.5rem;
+}
+
+.highlight-primary {
+  color: var(--seafoam-green);
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(148, 210, 189, 0.3);
+}
+
+.highlight-secondary {
+  color: var(--teal-light);
+  font-weight: 600;
+}
+
+.highlight-accent {
+  color: var(--seafoam-light);
+  font-weight: 600;
+}
+
+/* ─── Toolkit Cards ───────────────────────── */
+.about-toolkit {
+  display: flex;
+  flex-direction: column;
+}
+
+.toolkit-header {
+  font-family: monospace;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.toolkit-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.toolkit-card {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: rgba(0, 95, 115, 0.05); /* very faint oceanic teal */
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, background 0.4s ease;
+  overflow: hidden;
+}
+
+.toolkit-card:hover {
+  transform: translateX(10px);
+  border-color: rgba(148, 210, 189, 0.3);
+  background: rgba(0, 95, 115, 0.15);
+}
+
+.toolkit-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--oceanic-teal);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toolkit-card:hover::before {
+  background: var(--seafoam-green);
+  box-shadow: 0 0 12px rgba(148, 210, 189, 0.6);
+}
+
+.toolkit-icon {
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(148, 210, 189, 0.05);
+  color: var(--oceanic-teal);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, color 0.4s ease, background 0.4s ease;
+}
+
+.toolkit-card:hover .toolkit-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 15px rgba(148, 210, 189, 0.2);
+  color: var(--seafoam-green);
+  background: rgba(148, 210, 189, 0.15);
+}
+
+.toolkit-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.toolkit-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.toolkit-card:hover .toolkit-info h3 {
+  color: var(--seafoam-green);
+}
+
+.toolkit-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
