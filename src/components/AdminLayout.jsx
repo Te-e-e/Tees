@@ -17,7 +17,7 @@ export default function AdminLayout() {
       <aside className="admin-sidebar">
         <div className="admin-sidebar-header">
           <ThemeIcon size={28} opacity={0.8} />
-          <span className="admin-brand">Kitsune<span className="admin-brand-accent">Admin</span></span>
+          <span className="admin-brand">Tee<span className="admin-brand-accent">Admin</span></span>
         </div>
 
         <nav className="admin-nav">

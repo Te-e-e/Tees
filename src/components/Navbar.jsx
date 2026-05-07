@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="navbar-inner container">
         <Link to="/" className="navbar-brand">
           <ThemeIcon size={32} opacity={0.9} />
-          <span className="navbar-title">Kitsune<span className="navbar-title-accent">Studio</span></span>
+          <span className="navbar-title">Tee</span>
         </Link>
 
         <div className="navbar-links">
